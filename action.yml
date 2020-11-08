@@ -1,0 +1,21 @@
+name: 'WakaTime Stat Update Action'
+author: Avinal
+description: 'Generate a WakaTime activity bar graph to be used in the README.md or embedded in web-page'
+
+inputs:
+  WAKATIME_API_KEY:
+    description: 'Your WakaTime API Key'
+    required: true
+
+  GITHUB_TOKEN:
+    description: 'GitHub access token'
+    required: true
+    default: ${{ github.token }}
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: 'sun'
+  color: 'yellow'
