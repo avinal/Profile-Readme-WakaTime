@@ -64,8 +64,8 @@ git remote -v
 git checkout ${INPUT_BRANCH}
 
 # push to github
-git stage "stat.svg"
+git stage "images/stat.svg"
 git commit -m "${INPUT_COMMIT_MSG}"
 git pull
-git push publisher master
+git push publisher ${INPUT_BRANCH}
 check_success "${GREEN}Successfully updated coding activity" "error: push error"
