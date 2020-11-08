@@ -51,7 +51,6 @@ def make_graph(data: list):
             ha="left",
         )
     plt.savefig("stat.svg", bbox_inches="tight")
-    plt.savefig("stat.png", bbox_inches="tight")
     print("new image generated")
 
 
