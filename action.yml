@@ -12,6 +12,16 @@ inputs:
     required: true
     default: ${{ github.token }}
 
+  BRANCH:
+    description: 'Which branch is used for saving images'
+    required: false
+    default: "master"
+
+  COMMIT_MSG:
+    description: 'Manual commit messages'
+    required: false
+    default: "Automated Coding Activity Update :alien:"
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
