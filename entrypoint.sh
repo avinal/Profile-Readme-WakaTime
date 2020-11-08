@@ -44,6 +44,7 @@ then
     mkdir -p "${repository}/images"
     check_success "images folder created" "error: cannot create folder"
 elif [[ -f "${repository}/images/stat.svg" ]]
+then
     rm "${repository}/images/stat.svg" 
     check_success "old images removed" "error: cannot remove images"
 fi
