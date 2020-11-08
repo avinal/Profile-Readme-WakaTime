@@ -1,9 +1,7 @@
 # Profile-Readme-WakaTime
-![LICENSE](https://img.shields.io/github/license/avinal/Profile-Readme-WakaTime?style=flat-square)
-![Release](https://img.shields.io/github/v/release/avinal/Profile-Readme-WakaTime?style=flat-square)
+<p align=center><img src="https://img.shields.io/github/license/avinal/Profile-Readme-WakaTime" alt="License"><img src="https://img.shields.io/github/v/release/avinal/Profile-Readme-WakaTime" alt="Releases"><img src="https://github.com/avinal/avinal/workflows/Build%20Graph/badge.svg" alt="Build"></p>
 
-If you use WakaTime to track your coding activity. You can add that to your README as a picture. 
-Just add this action to any of your repository and there you have it. See mine below.
+If you use WakaTime to track your coding activity. You can add that to your README as a bar graph or embed in your blog/portfolio. Just add this action to any of your repository and there you have it. See mine below. 
 
 ## My WakaTime Coding Activity
 <img src="https://github.com/avinal/avinal/blob/master/images/stat.svg" alt="Avinal WakaTime Activity"/>
