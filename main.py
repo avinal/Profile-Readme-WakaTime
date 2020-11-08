@@ -16,7 +16,7 @@ def this_week(dates: list) -> str:
     week_end = datetime.datetime.strptime(dates[4], "%Y-%m-%dT%H:%M:%SZ")
     week_start = datetime.datetime.strptime(dates[3], "%Y-%m-%dT%H:%M:%SZ")
     print("week header created")
-    return f"From {week_start.strftime('%d %B, %Y')} to {week_end.strftime('%d %B, %Y')}: {dates[5]}"
+    return f"Coding Activity During: {week_start.strftime('%d %B, %Y')} to {week_end.strftime('%d %B, %Y')}"
 
 
 def make_graph(data: list):
@@ -51,6 +51,7 @@ def make_graph(data: list):
             ha="left",
         )
     plt.savefig("stat.svg", bbox_inches="tight")
+    plt.savefig("stat.png", bbox_inches="tight")
     print("new image generated")
 
 
@@ -64,7 +65,6 @@ def get_stats() -> list:
         lang_data = data["data"]["languages"]
         start_date = data["data"]["start"]
         end_date = data["data"]["end"]
-        week_total = data["data"]["human_readable_total_including_other_language"]
     except KeyError:
         print("error: please add your WakaTime API key to the Repository Secrets")
         sys.exit(1)
@@ -77,7 +77,7 @@ def get_stats() -> list:
         lang_list.append(lang["name"])
         time_list.append(lang["text"])
         percent_list.append(lang["percent"])
-    data_list = [lang_list, time_list, percent_list, start_date, end_date, week_total]
+    data_list = [lang_list, time_list, percent_list, start_date, end_date]
     print("coding data collected")
     return data_list
 
