@@ -1,5 +1,11 @@
 #! /bin/bash
 
+# Copyright (c) 2020 Avinal Kumar
+#
+# Distributed under the terms of MIT License
+#
+# The full license is in the file LICENSE, distributed with this software.
+
 # constants
 RED='\033[0;31m' # Red color output for failed commands
 GREEN='\033[1;32m'
