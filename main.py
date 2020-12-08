@@ -34,8 +34,8 @@ def make_graph(data: list):
     bars = ax.barh(y_pos, data[2])
     ax.set_yticks(y_pos)
     ax.get_xaxis().set_ticks([])
-    ax.set_yticklabels(data[0])
-    ax.set_title(this_week(data))
+    ax.set_yticklabels(data[0], color="#586069")
+    ax.set_title(this_week(data), color="#586069")
     ax.invert_yaxis()
     plt.box(False)
     for i, bar in enumerate(bars):
@@ -55,8 +55,9 @@ def make_graph(data: list):
             textcoords="offset points",
             va="center",
             ha="left",
+            color="#586069"
         )
-    plt.savefig("stat.svg", bbox_inches="tight")
+    plt.savefig("stat.svg", bbox_inches="tight", transparent=True)
     print("new image generated")
 
 
