@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Use avinal/Profile-Readme-WakaTime@<latest-release-tag> for latest stable release
-      # Do not change the line below except the word master with tag number maybe
+      # Do not change the line below until you have forked this repository
       # If you have forked this project you can use <username>/Profile-Readme-WakaTime@master instead
       - uses: avinal/Profile-Readme-WakaTime@master
         with:
