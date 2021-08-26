@@ -59,7 +59,7 @@ fi
 cp stat.svg "${repository}/images"
 check_success "new image copied" "error: cannot replace image"
 
-cd "${repository}"
+cd "${repository}" || exit
 
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 git config user.name "GitHub Actions"
