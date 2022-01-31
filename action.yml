@@ -5,7 +5,7 @@
 # The full license is in the file LICENSE, distributed with this software.
 
 name: 'WakaTime Stat Update Action'
-author: Avinal
+# author: Avinal
 description: 'Generate a WakaTime activity bar graph to be used in the README.md or embedded in web-page'
 
 inputs:
