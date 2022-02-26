@@ -68,11 +68,11 @@ check_success "git credential added" "error: git credential wrong/missing"
 git remote add publisher "${remote_repo}"
 git remote -v
 
-git checkout ${INPUT_BRANCH}
+git checkout "${INPUT_BRANCH}"
 
 # push to github
 git stage "images/stat.svg"
 git commit -m "${INPUT_COMMIT_MSG}"
 git pull
-git push publisher ${INPUT_BRANCH}
+git push publisher "${INPUT_BRANCH}"
 check_success "${GREEN}Successfully updated coding activity" "error: push error"
