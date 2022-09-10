@@ -15,7 +15,7 @@ import numpy as np
 import requests
 
 waka_key = os.getenv("INPUT_WAKATIME_API_KEY")
-
+stats_range = os.getenv("INPUT_STATS_RANGE", "last_7_days")
 
 def this_week(dates: list) -> str:
     """Returns a week streak"""
@@ -64,7 +64,7 @@ def make_graph(data: list):
 def get_stats() -> list:
     """Gets API data and returns markdown progress"""
     data = requests.get(
-        f"https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key={waka_key}"
+        f"https://wakatime.com/api/v1/users/current/stats/{stats_range}?api_key={waka_key}"
     ).json()
 
     try:

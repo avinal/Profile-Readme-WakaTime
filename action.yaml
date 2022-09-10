@@ -28,6 +28,11 @@ inputs:
     required: false
     default: "Automated Coding Activity Update :alien:"
 
+  STATS_RANGE:
+    description: "The range of statistics data to collect"
+    required: false
+    default: "last_7_days" # see. https://wakatime.com/developers#stats
+
 runs:
   using: "docker"
   image: "Dockerfile"
