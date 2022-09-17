@@ -17,12 +17,12 @@ import requests
 waka_key = os.getenv("INPUT_WAKATIME_API_KEY")
 stats_range = os.getenv("INPUT_STATS_RANGE", "last_7_days")
 
-def this_week(dates: list) -> str:
-    """Returns a week streak"""
-    week_end = datetime.datetime.strptime(dates[4], "%Y-%m-%dT%H:%M:%SZ")
-    week_start = datetime.datetime.strptime(dates[3], "%Y-%m-%dT%H:%M:%SZ")
-    print("week header created")
-    return f"From {week_start.strftime('%d %B, %Y')} to {week_end.strftime('%d %B, %Y')}: {dates[5]}"
+def this_range(dates: list) -> str:
+    """Returns streak within given range"""
+    range_end = datetime.datetime.strptime(dates[4], "%Y-%m-%dT%H:%M:%SZ")
+    range_start = datetime.datetime.strptime(dates[3], "%Y-%m-%dT%H:%M:%SZ")
+    print("range header created")
+    return f"From {range_start.strftime('%d %B, %Y')} to {range_end.strftime('%d %B, %Y')}: {dates[5]}"
 
 
 def make_graph(data: list):
@@ -35,7 +35,7 @@ def make_graph(data: list):
     ax.set_yticks(y_pos)
     ax.get_xaxis().set_ticks([])
     ax.set_yticklabels(data[0], color="#586069")
-    ax.set_title(this_week(data), color="#586069")
+    ax.set_title(this_range(data), color="#586069")
     ax.invert_yaxis()
     plt.box(False)
     for i, bar in enumerate(bars):
@@ -71,7 +71,7 @@ def get_stats() -> list:
         lang_data = data["data"]["languages"]
         start_date = data["data"]["start"]
         end_date = data["data"]["end"]
-        week_total = data["data"]["human_readable_total_including_other_language"]
+        range_total = data["data"]["human_readable_total_including_other_language"]
     except KeyError:
         print("error: please add your WakaTime API key to the Repository Secrets")
         sys.exit(1)
@@ -85,7 +85,7 @@ def get_stats() -> list:
         time_list.append(lang["text"])
         percent_list.append(lang["percent"])
     data_list = [lang_list, time_list, percent_list,
-                 start_date, end_date, week_total]
+                 start_date, end_date, range_total]
     print("coding data collected")
     return data_list
 
