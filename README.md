@@ -57,7 +57,8 @@ jobs:
           # Manual Commit messages - write your own messages here
           COMMIT_MSG: "Automated Coding Activity Update :alien:"
           # Range of fetching data - default is "last_7_days". See https://wakatime.com/developers#stats for more options
-          STATUS_RANGE: "last_7_days"
+          STATS_RANGE: "last_7_days"
+
 ```
 
 6. Please wait till 12 AM UTC to run this workflow automatically. Or you can force run it by going to Action tab. Or you can add following lines under `on:` to run with every push. Search for 12 AM UTC to find equivalent time in your time zone.
